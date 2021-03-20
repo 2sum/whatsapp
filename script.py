@@ -31,7 +31,7 @@ cnt=0
 tm=0
 i=0
 d={}
-participant=['Malay:','Chunia:','Manas Das:','Sidhartha Tripathy:','Pradipta Sarangi:','Nandan Mohanty:','Satya Acharya:','Subhashis Sahoo:','Loka Panda:','Biplab Nayak:','Aroop:','Debi:','Kukuda:','Pahala:','Paresh:','Srinibas Satpathy:','Sumanta:','Suranjan Panda:','Deepak Patnaik:','Asis Patnaik:','Deepak Mohapatra:','Ratikanta Jena:','Bibhu:','Shakti Mohanty:','Swain:','Sibu Taria:','Pradyumna Tripathy:','Arka Nandi:','Hara Mishra:','Debasis Khuntia:']#
+participant=['XXX']
 #fl='/Users/malaybiswal/Downloads/whatsapp/investor.txt'
 fl='/Users/malaybiswal/Downloads/whatsapp/_chat.txt'
 with open (fl,'r') as r:

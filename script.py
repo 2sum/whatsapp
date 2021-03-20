@@ -32,8 +32,8 @@ tm=0
 i=0
 d={}
 participant=['XXX']
-#fl='/Users/malaybiswal/Downloads/whatsapp/investor.txt'
-fl='/Users/malaybiswal/Downloads/whatsapp/_chat.txt'
+#fl='/Users/XXXX/Downloads/whatsapp/investor.txt'
+fl='/Users/XXXX/Downloads/whatsapp/_chat.txt'
 with open (fl,'r') as r:
     reader=r.readlines()
     for lines in reader:

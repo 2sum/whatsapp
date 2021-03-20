@@ -10,7 +10,7 @@ mon=''
 day=''
 tm=''
 err_cnt=0
-with open ('/Users/malaybiswal/malay_procore/python/projects/arkk/my.conf','r') as r:
+with open ('/Users/python/projects/arkk/my.conf','r') as r:
     reader=r.readlines()
     for lines in reader:
         l=lines.split(':')

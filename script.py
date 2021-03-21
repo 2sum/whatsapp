@@ -10,7 +10,33 @@ mon=''
 day=''
 tm=''
 err_cnt=0
-with open ('/Users/python/projects/arkk/my.conf','r') as r:
+start='''<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Name', 'MessageCount'],
+            '''
+end=''']);
+
+        var options = {
+          title: 'Whatsapp Daily Report',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>'''
+with open ('/Users/malaybiswal/malay_procore/python/projects/arkk/my.conf','r') as r:
     reader=r.readlines()
     for lines in reader:
         l=lines.split(':')
@@ -31,9 +57,9 @@ cnt=0
 tm=0
 i=0
 d={}
-participant=['XXX']
-#fl='/Users/XXXX/Downloads/whatsapp/investor.txt'
-fl='/Users/XXXX/Downloads/whatsapp/_chat.txt'
+participant=['Malay','Chunia','Manas Das','Sidhartha Tripathy','Pradipta Sarangi','Nandan Mohanty','Satya Acharya','Subhashis Sahoo','Loka Panda','Biplab  Nayak','Aroop','Debi','Kukuda','Pahala','Paresh','Srinibas Satpathy','Sumanta','Suranjan Panda','Deepak Patnaik','Asis Patnaik','Deepak Mohapatra','Ratikanta Jena','Bibhu','Shakti Mohanty','Swain','Sibu Taria','Pradyumna Tripathy','Arka Nandi','Hara Mishra','Debasis Khuntia']
+#fl='/Users/malaybiswal/Downloads/whatsapp/investor.txt'
+fl='/Users/malaybiswal/Downloads/whatsapp/_chat.txt'
 with open (fl,'r') as r:
     reader=r.readlines()
     for lines in reader:
@@ -63,7 +89,7 @@ with open (fl,'r') as r:
             dt1='20'+dt1s[2]+'-'+mon+'-'+day
             #dt=dt1+" "+dts[1]
             if dt2s[1].strip()=='PM':
-                print("***********************YUPPPY",dt2s[1],dt2s[0])
+                #print("***********************YUPPPY",dt2s[1],dt2s[0])
                 tms=dt2s[0].split(':')
                 if tms[0].strip()=='12':
                     hr=tms[0]
@@ -76,7 +102,7 @@ with open (fl,'r') as r:
                     hr='0'+hr
                 tm=hr+':'+tms[1]+':'+tms[2]
             else:
-                print("#######################HMMMMM",dt2s[1])
+                #print("#######################HMMMMM",dt2s[1])
                 tm=dt2s[0].strip()
             #dt=dt1+' '+dt2s[0].strip()
             dt=dt1+' '+tm
@@ -96,14 +122,14 @@ with open (fl,'r') as r:
                     cur.execute(sql, (dt,id,line[1],int(l)))
 
             except Exception as e:
-                print(e,dt,id,line[1])
-                print(e,dt,id,text[1])
+                #print(e,dt,id,line[1])
+                #print(e,dt,id,text[1])
                 err_cnt+=1
             if cnt==1:
                 tm=line[0]
             if id =='Investors:' or id=="F95UCE:" or len(id)<1:
                 continue
-            # if len(line[1])<10:
+            #if len(line[1])>30:
             #     break
             if id not in d:
                 d[id]=1
@@ -125,4 +151,16 @@ print("-------Chat Time started from",tm[1:len(tm)]," CST----------")
 main_list = np.setdiff1d(participant,temp)
 print("*****THIS IS PIP LIST:*****\n",main_list)
 print("ERROR COUNT:",err_cnt)
+graphstr=''
+for details in s:
+    name=details[0]
+    cnt=details[1]
+    graphstr+='['+'\''+name+'\','+str(cnt)+'],'
+
+print (graphstr[0:len(graphstr)-1])
+html_page=start+graphstr+end
+with open ('/Users/malaybiswal/Downloads/res.html','w') as f:
+    f.write(html_page)
+
+
 

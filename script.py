@@ -57,7 +57,7 @@ cnt=0
 tm=0
 i=0
 d={}
-participant=['Malay','Chunia','Manas Das','Sidhartha Tripathy','Pradipta Sarangi','Nandan Mohanty','Satya Acharya','Subhashis Sahoo','Loka Panda','Biplab  Nayak','Aroop','Debi','Kukuda','Pahala','Paresh','Srinibas Satpathy','Sumanta','Suranjan Panda','Deepak Patnaik','Asis Patnaik','Deepak Mohapatra','Ratikanta Jena','Bibhu','Shakti Mohanty','Swain','Sibu Taria','Pradyumna Tripathy','Arka Nandi','Hara Mishra','Debasis Khuntia']
+participant=[TWFsYXksQ2h1bmlhLE1hbmFzIERhcyxTaWRoYXJ0aGEgVHJpcGF0aHksUHJhZGlwdGEgU2FyYW5naSxOYW5kYW4gTW9oYW50eSxTYXR5YSBBY2hhcnlhLFN1Ymhhc2hpcyBTYWhvbyxMb2thIFBhbmRhLEJpcGxhYiAgTmF5YWssQXJvb3AsRGViaSxLdWt1ZGEsUGFoYWxhLFBhcmVzaCxTcmluaWJhcyBTYXRwYXRoeSxTdW1hbnRhLFN1cmFuamFuIFBhbmRhLERlZXBhayBQYXRuYWlrLEFzaXMgUGF0bmFpayxEZWVwYWsgTW9oYXBhdHJhLFJhdGlrYW50YSBKZW5hLEJpYmh1LFNoYWt0aSBNb2hhbnR5LFN3YWluLFNpYnUgVGFyaWEsUHJhZHl1bW5hIFRyaXBhdGh5LEFya2EgTmFuZGksSGFyYSBNaXNocmEsRGViYXNpcyBLaHVudGlhCg==]
 #fl='/Users/malaybiswal/Downloads/whatsapp/investor.txt'
 fl='/Users/malaybiswal/Downloads/whatsapp/_chat.txt'
 with open (fl,'r') as r:
